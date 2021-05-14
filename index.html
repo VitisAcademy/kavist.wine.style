@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Основные сорта и стили</title>
+  <link rel="shortcut icon" href="img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/scribe.css">
+  <link rel="stylesheet" href="css/listok.css">
+  <link rel="stylesheet" href="css/chain.css">
+  <script src="js/db.js"></script>
+  <script src="js/draggabilly.pkgd.min.js"></script>
+</head>
+<body>
+<div class="ave">
+  <div class="ave__title">Введите email</div>
+  <input type="email" maxlength="40" autocomplete="off" onkeyup="checkValidate(this)" autofocus class="ave__input">
+  <div class="ave__button button" onclick="logIn()">Продолжить</div>
+</div>
+<div class="header">
+  <div class="header__menu" onclick="toggleHamburger()"></div>
+  <div class="header__title">Журналист</div>
+</div>
+<div class="main">
+  <div class="task">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Помогите журналисту написать статью. Для этого заполните пробелы в предложениях.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page scribe left">
+      <div class="scribe__title">
+        Белые вина существуют в большом разнообразии: сухие, полусладкие, сладкие, десертные и т.д., отличаясь друг от друга богатством использованных для их изготовления
+        <input type="text" maxlength="6" autocomplete="off" class="scribe__input" style='width: calc(85px + 5 * ((100vw - 320px) / 880))'>
+        <input type="text" maxlength="9" autocomplete="off" class="scribe__input" style='width: calc(125px + 15 * ((100vw - 320px) / 880))'>.
+        <br>Некоторые из них весьма
+        <input type="text" maxlength="9" autocomplete="off" class="scribe__input" style='width: calc(125px + 15 * ((100vw - 320px) / 880))'>,
+        такие как Совиньон, Мускат, Рислинг,
+        <input type="text" maxlength="6" autocomplete="off" class="scribe__input" style='width: calc(85px + 10 * ((100vw - 320px) / 880))'>,
+        а также
+        <input type="text" maxlength="14" autocomplete="off" class="scribe__input" style='width: calc(195px + 20 * ((100vw - 320px) / 880))'>.
+        Если они выращивались в
+        <input type="text" maxlength="8" autocomplete="off" class="scribe__input" style='width: calc(125px + 10 * ((100vw - 320px) / 880))'>
+        климате, то их ароматы будут ярко выраженными, а если в более теплых регионах, тогда их структура окажется более плотной.
+        <br><input type="text" maxlength="11" autocomplete="off" class="scribe__input" style='width: calc(155px + 15 * ((100vw - 320px) / 880))'>
+        ароматы можно почувствовать в винах, если виноград для их изготовления был выращен в условиях соленого морского воздуха, на почве, весьма насыщенной кремнием и окаменелостями.
+      </div>
+      <div class=" button" onclick="scoreButton(0);scribeCheck()">Нажмите для завершения!</div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Распределите сорта в соответствии с указанными категориями. Перетащите элементы для смещения позиции.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page listok left">
+      <div class="listok__list1">
+        <div class="listok__tab"></div>
+        <div class="listok__button button" onclick="listokCheck1()">Продолжить!</div>
+      </div>
+      <div class="listok__list2 hidden">
+        <div class="listok__tab"></div>
+        <div class="button" onclick="scoreButton(1);listokCheck2()">Нажмите для завершения!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info" style="z-index: 2">
+      <div class="info__title">Найдите лишнее в цепочке ароматов сорта.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page chain left"></div>
+  </div>
+
+  <div class="task hidden">
+    <div class="lock hidden"></div>
+    <div class="info">
+      <div class="info__title">Прочитайте внимательно вопрос. Дайте развёрнутый ответ в комментариях к уроку.</div>
+      <div onclick="startInfo(this)" class="info__button button">Понятно!</div>
+    </div>
+    <div class="task__page asked left">
+      <div class="asked__title"></div>
+      <div class=" button" onclick="endButton()">Дать ответ!</div>
+    </div>
+  </div>
+</div>
+<div class="footer"></div>
+<div class="menu menu__off">
+  <div class="menu__content"></div>
+</div>
+<!-- подключить js -->
+<script src="js/scribe.js"></script>
+<script src="js/listok.js"></script>
+<script src="js/chain.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
